@@ -1,0 +1,26 @@
+.header {
+  color: white;
+  width: fit-content;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 9px;
+  margin: 20px;
+}
+.cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.elmntCont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cardCont {
+  transition: all 1s ease;
+}
+.cardCont:hover {
+  transform: scale(1.05, 1.05);
+}
