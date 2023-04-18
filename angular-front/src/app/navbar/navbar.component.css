@@ -7,10 +7,14 @@ p{
     left: 10px;
 }
 
-
+.DICTIONARY{
+    top: 13px;
+    left: 105px;
+}
 .STAR{
     color: red;
     top: 0px;
+    left: 15px;
 }
 
 .navbar{
