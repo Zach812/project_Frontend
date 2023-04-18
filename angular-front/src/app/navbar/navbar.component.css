@@ -1,0 +1,19 @@
+p{
+    color: white;
+    font-weight: bolder;
+    font-size: xx-large;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+}
+
+
+.STAR{
+    color: red;
+    top: 0px;
+}
+
+.navbar{
+    height: 65px;
+    border: 1px solid white;
+}
