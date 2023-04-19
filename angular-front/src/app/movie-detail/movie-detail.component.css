@@ -1,0 +1,12 @@
+.card{
+    height: fit-content;
+    width: 90%;
+    margin:20px 5% 0 5%;
+    background-color: rgba(40, 40, 40, .8);
+    color: white;
+}
+
+img{
+    max-width: 400px;
+    border-radius: .3rem;
+}
