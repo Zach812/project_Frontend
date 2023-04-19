@@ -1,0 +1,24 @@
+ul.rating {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  ul.rating li {
+    margin-right: 10px;
+  }
+  .btn {
+    color: white;
+    background-color: black;
+    border-color: black;
+  }
+  .fa-long-arrow-alt-right {
+    color: white;
+  }
+  .fa-star {
+    color: black !important;
+  }
+  
+      
+    
