@@ -33,10 +33,12 @@ ul.rating {
 /* Hover transition */
 .rating li:hover .fa-star {
   font-size: 1.5rem;
-  transform: scale(1.05);
+  transform: scale(1.001);
   transition-duration: 1s;
 }
-
+.bg {
+  background-color: rgba(255, 255, 255, 0.5);
+}
 
     
   
