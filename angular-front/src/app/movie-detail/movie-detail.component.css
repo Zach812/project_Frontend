@@ -1,45 +1,45 @@
-.card{
-    height: fit-content;
-    width: 90%;
-    margin:20px 5% 0 5%;
-    background-color: rgba(40, 40, 40, .8);
-    color: white;
-    border: 6px solid rgba(255, 255, 255, .01);
+.card {
+  height: fit-content;
+  width: 90%;
+  margin: 20px 5% 0 5%;
+  background-color: rgba(40, 40, 40, 0.8);
+  color: white;
+  border: 6px solid rgba(255, 255, 255, 0.01);
 }
 
-img{
-    max-width: 400px;
-    border-radius: .3rem;
-    padding-right: 1rem;
-    padding-bottom: .2rem;
-    opacity: 80%;   
+img {
+  max-width: 400px;
+  border-radius: 0.3rem;
+  padding-right: 1rem;
+  padding-bottom: 0.2rem;
+  opacity: 80%;
 }
 
-em{
-    font-size: smaller;
-    text-decoration: underline;
-    text-decoration-color: rgba(255, 255, 255, .7);
+em {
+  font-size: smaller;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.7);
 }
 
-a{
-    color: white;
+a {
+  color: white;
 }
 
-.movie-name{
-    text-decoration: none;
+.movie-name {
+  text-decoration: none;
 }
 
-.card-title{
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
+.card-title {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.CharPic{
-    display: none;
+.CharPic {
+  display: none;
 }
-p.two:hover .CharPic{
-    position: absolute;
-    height:20%;
-    top: 300px;
-    left: 300px;
-    display: block;
- }
+p.two:hover .CharPic {
+  position: absolute;
+  height: 20%;
+  top: 300px;
+  left: 300px;
+  display: block;
+}
