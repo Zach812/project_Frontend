@@ -16,6 +16,7 @@ img{
 }
 
 em{
+    font-size: smaller;
     text-decoration: underline;
     text-decoration-color: rgba(255, 255, 255, .7);
 }
