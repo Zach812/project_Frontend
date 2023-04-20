@@ -10,6 +10,8 @@ import { MoviesService } from '../movies.service';
 export class MovieDetailComponent implements OnInit {
   movie: any;
 
+  
+
   constructor(
     private route: ActivatedRoute,
     private movieService: MoviesService,
