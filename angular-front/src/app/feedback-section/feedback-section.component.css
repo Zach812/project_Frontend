@@ -7,6 +7,9 @@ ul.rating {
   
   ul.rating li {
     margin-right: 10px;
+    transition:all 1s ease;
+    transition: 1s ease-in-out;
+    transition-timing-function: 1s ease-out;
   }
   .btn {
     color: white;
@@ -16,9 +19,26 @@ ul.rating {
   .fa-long-arrow-alt-right {
     color: white;
   }
-  .fa-star {
-    color: black !important;
+  .btn-danger:hover {
+    background-color: #c82333;
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
   }
+  /* Star icons */
+.fa-star {
+  color: black !important;
+  transition: all 1s ease;
+}
+
+/* Hover transition */
+.rating li:hover .fa-star {
+  font-size: 1.5rem;
+  transform: scale(1.05);
+  transition-duration: 1s;
+}
+
+
+    
   
       
     
