@@ -12,11 +12,16 @@ img{
     border-radius: .3rem;
     padding-right: 1rem;
     padding-bottom: .2rem;
+    opacity: 80%;   
 }
 
 em{
     text-decoration: underline;
     text-decoration-color: rgba(255, 255, 255, .7);
+}
+
+a{
+    color: white;
 }
 
 .movie-name{
@@ -26,3 +31,14 @@ em{
 .card-title{
     border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
+
+.CharPic{
+    display: none;
+}
+p.two:hover .CharPic{
+    position: absolute;
+    height:20%;
+    top: 300px;
+    left: 300px;
+    display: block;
+ }
