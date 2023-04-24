@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FeedbackSectionComponent } from './feedback-section/feedback-section.component';
+import { CharacterCardComponent } from './character-card/character-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FeedbackSectionComponent } from './feedback-section/feedback-section.co
     MainPageComponent,
     NavbarComponent,
     MovieDetailComponent,
-    FeedbackSectionComponent
+    FeedbackSectionComponent,
+    CharacterCardComponent
   ],
   imports: [
     BrowserModule,

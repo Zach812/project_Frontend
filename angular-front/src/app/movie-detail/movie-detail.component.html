@@ -2,15 +2,13 @@
     <h1 class="card-title"><img src="{{movie.pict}}" alt=""><em class="movie-name">{{movie.name}}</em></h1>
     <div class="card-body">
         <h2><em>Characters</em></h2>
-        <ul class="unorder-list">
-            <li><p class="two">Character 1
-                <img class="CharPic" src="{{movie.pict}}"/>
-             </p></li>
-             
-             <li><p class="two">Character 2
-                <img class="CharPic" src="{{movie.pict}}"/>
-             </p></li>
-        </ul>
+        <p class="list">
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
+        </p>
     </div>
     <div class="card-body">
         <h2><em>Description</em></h2>
