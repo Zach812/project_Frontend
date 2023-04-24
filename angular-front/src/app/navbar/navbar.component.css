@@ -1,3 +1,8 @@
+@font-face{
+    font-family: StarJedi;
+    src: url(../../assets/font/Starjedi.ttf);
+}
+
 p{
     color: white;
     font-weight: bolder;
@@ -13,9 +18,13 @@ p{
     left: 105px;
 }
 .STAR{
+    font-family: StarJedi;
     color: rgb(235, 212, 31);
     top: 0px;
     left: 15px;
+}
+.WARS{
+    font-family: StarJedi;
 }
 
 .navbar{
@@ -23,3 +32,5 @@ p{
     height: 65px;
     border: 1px solid white;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
