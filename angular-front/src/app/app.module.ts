@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FeedbackSectionComponent } from './feedback-section/feedback-section.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,10 @@ import { FeedbackSectionComponent } from './feedback-section/feedback-section.co
     MainPageComponent,
     NavbarComponent,
     MovieDetailComponent,
-    FeedbackSectionComponent
+    FeedbackSectionComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

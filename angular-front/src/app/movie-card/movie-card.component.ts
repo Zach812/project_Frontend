@@ -10,8 +10,8 @@ export class MovieCardComponent {
   @Input() movie: Movie = {
     id: NaN,
     name: '',
-    desc: '',
-    pict: '',
+    description: '',
+    picture: '',
     order: NaN,
   };
 }
