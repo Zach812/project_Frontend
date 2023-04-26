@@ -10,12 +10,16 @@ p{
 .DICTIONARY{
     
     top: 13px;
-    left: 105px;
+    left: 108px;
 }
 .STAR{
+    font-family: StarJedi;
     color: rgb(235, 212, 31);
     top: 0px;
     left: 15px;
+}
+.WARS{
+    font-family: StarJedi;
 }
 
 .navbar{
@@ -23,3 +27,5 @@ p{
     height: 65px;
     border: 1px solid white;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');

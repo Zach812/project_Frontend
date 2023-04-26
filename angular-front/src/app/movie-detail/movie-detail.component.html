@@ -1,34 +1,21 @@
 <div class="card">
-  <h1 class="card-title">
-    <img src="{{ movie.picture }}" alt="" /><em class="movie-name">{{
-      movie.name
-    }}</em>
-  </h1>
-  <div class="card-body">
-    <h2><em>Characters</em></h2>
-    <ul class="unorder-list">
-      <li>
-        <p class="two">
-          Character 1
-          <img class="CharPic" src="{{ movie.picture }}" />
-        </p>
-      </li>
 
-      <li>
-        <p class="two">
-          Character 2
-          <img class="CharPic" src="{{ movie.picture }}" />
+    <h1 class="card-title"><img src="{{movie.pict}}" alt=""><em class="movie-name">{{movie.name}}</em></h1>
+    <div class="card-body">
+        <h2><em>Characters</em></h2>
+        <p class="list">
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
+            <app-character-card></app-character-card>
         </p>
-      </li>
-    </ul>
-  </div>
-  <div class="card-body">
-    <h2><em>Description</em></h2>
-    {{ movie.description }}. Lorem ipsum dolor sit amet consectetur adipisicing
-    elit. Nisi autem iure enim illo cupiditate, nemo eos, quidem voluptatem,
-    culpa odio eaque numquam facilis deleniti commodi ratione. Architecto optio
-    odit impedit!
-  </div>
+    </div>
+    <div class="card-body">
+        <h2><em>Description</em></h2>
+        {{movie.desc}}.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi autem iure enim illo cupiditate, nemo eos, quidem voluptatem, culpa odio eaque numquam facilis deleniti commodi ratione. Architecto optio odit impedit!
+    </div>
 </div>
 
 <app-feedback-section></app-feedback-section>

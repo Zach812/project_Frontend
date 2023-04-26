@@ -8,6 +8,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FeedbackSectionComponent } from './feedback-section/feedback-section.component';
+import { CharacterCardComponent } from './character-card/character-card.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -18,6 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     MovieDetailComponent,
     FeedbackSectionComponent,
+    CharacterCardComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

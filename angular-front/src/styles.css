@@ -219,3 +219,8 @@ body {
   }
 }
 @import "~bootstrap/dist/css/bootstrap.css";
+
+@font-face{
+  font-family: StarJedi;
+  src: url(./assets/font/Starjedi.ttf);
+}
