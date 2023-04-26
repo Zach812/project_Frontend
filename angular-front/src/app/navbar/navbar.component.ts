@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { Movie } from '../Movie';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,5 +10,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  showOrHide: boolean = true;
+  movies$!: Observable<Movie[]>;
+  private searchTerms = new Subject<string>();
+
+  constructor(private moviesService: MoviesService){}
+  
+  search(search: string){
+    this.searchTerms.next(search);
+  }
+
+  ngOnInit(): void{
+    this.movies$ = this.searchTerms.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap((search: string) => this.moviesService.search(search)),
+    );
+  }
 }

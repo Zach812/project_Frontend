@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { MOVIES } from './mock-movies';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Movie } from './Movie';
 
 const MOVIES_API = 'http://127.0.0.1:8000/movies/';
@@ -28,5 +28,14 @@ export class MoviesService {
   getMovie(name: string) {
     const movie = this.movies.find((m) => m.name == name);
     return movie;
+  }
+
+  search(search: string): Observable<Movie[]>{
+    if(!search.trim()){
+      return of([]);
+    }
+    return this.http.get<Movie[]>(
+      `${MOVIES_API}/?name=${search}`
+      );
   }
 }

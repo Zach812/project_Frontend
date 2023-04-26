@@ -2,8 +2,14 @@
     <div class="container-fluid">
         <a class="navbar-brand"><p class="STAR">STAR </p><p class="WARS"> WARS</p> <p class="DICTIONARY">DICTIONARY</p></a>
         <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Movie Name" aria-label="Search">
-        <button class="btn btn-outline-danger" type="submit" (disabled)="showOrHide">Search</button>
+        <input #Search class="form-control me-2" type="search" placeholder="Movie Name" aria-label="Search" (input)="search(Search.value)">
+        <ul>
+            <li *ngFor="let movie of movies$ | async">
+                <a routerLink="/detail:name">
+                    {{movie.name}}
+                </a>
+            </li>
+        </ul>
         </form>
     </div>
 </nav>
