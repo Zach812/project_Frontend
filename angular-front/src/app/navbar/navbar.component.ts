@@ -9,7 +9,7 @@ import { MoviesService } from '../movies.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   movies$!: Observable<Movie[]>;
   private searchTerms = new Subject<string>();
 
