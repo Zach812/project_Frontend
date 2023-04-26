@@ -1,6 +1,6 @@
 <div class="cardCont">
   <div class="top">
-    <img src="{{ movie.pict }}" alt="" class="topPic" />
+    <img src="{{ movie.picture }}" alt="" class="topPic" />
     <div class="topRank">
       <h1 class="topRankTxt"># {{ movie.order }}</h1>
     </div>
@@ -8,7 +8,7 @@
   <div class="title">
     <h1 class="title-txt">{{ movie.name }}</h1>
   </div>
-  <button class="btn btn-dark fw-bolder" routerLink="/detail/{{ movie.id }}">
+  <button class="btn btn-dark fw-bolder" routerLink="/detail/{{ movie.name }}">
     View More
   </button>
 </div>
