@@ -24,7 +24,7 @@
   width: 384px;
   height: 184px;
 
-  background: #cfcfcf;
+  background: rgba(128, 128, 128, 0.6);
   border-radius: 8px;
 }
 .topPic {

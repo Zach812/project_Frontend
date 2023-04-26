@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from '../Movie';
 import { MoviesService } from '../movies.service';
 import { Observable } from 'rxjs';
+import { MOVIES } from '../mock-movies';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
