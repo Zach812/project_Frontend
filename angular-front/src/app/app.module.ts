@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FeedbackSectionComponent } from './feedback-section/feedback-section.component';
 import { CharacterCardComponent } from './character-card/character-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CharacterCardComponent } from './character-card/character-card.componen
     BrowserModule,
     AppRoutingModule
   ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
