@@ -19,11 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     MovieDetailComponent,
     FeedbackSectionComponent,
-    CharacterCardComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+    CharacterCardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

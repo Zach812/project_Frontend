@@ -6,11 +6,11 @@ import { MoviesService } from '../movies.service';
 @Component({
   selector: 'app-character-card',
   templateUrl: './character-card.component.html',
-  styleUrls: ['./character-card.component.css']
+  styleUrls: ['./character-card.component.css'],
 })
 export class CharacterCardComponent {
-  movie:any;
-  
+  movie: any;
+
   constructor(
     private route: ActivatedRoute,
     private movieService: MoviesService,
@@ -22,7 +22,7 @@ export class CharacterCardComponent {
   }
 
   getMovie(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.movie = this.movieService.getMovie(id);
+    const name = String(this.route.snapshot.paramMap.get('name'));
+    this.movie = this.movieService.getMovie(name);
   }
 }
