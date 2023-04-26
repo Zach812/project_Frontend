@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { MOVIES } from './mock-movies';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movie } from './Movie';
 
@@ -12,12 +12,21 @@ const MOVIES_API = 'http://127.0.0.1:8000/movies/';
 export class MoviesService {
   constructor(private http: HttpClient) {}
 
-  getMovies(): Observable<Movie[]> {
+  movies: Movie[] = [];
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
+
+  getMovies() {
+    this.http
+      .get<Movie[]>(MOVIES_API)
+      .subscribe((movies) => (this.movies = movies));
     return this.http.get<Movie[]>(MOVIES_API);
   }
 
-  getMovie(id: number) {
-    const movie = MOVIES.find((m) => m.id == id);
+  getMovie(name: string) {
+    const movie = this.movies.find((m) => m.name == name);
     return movie;
   }
 }

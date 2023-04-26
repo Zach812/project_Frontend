@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../Movie';
 
 @Component({
@@ -6,7 +6,7 @@ import { Movie } from '../Movie';
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.css'],
 })
-export class MovieCardComponent {
+export class MovieCardComponent implements OnInit {
   @Input() movie: Movie = {
     id: NaN,
     name: '',
@@ -14,4 +14,8 @@ export class MovieCardComponent {
     picture: '',
     order: NaN,
   };
+
+  ngOnInit(): void {
+    console.log(this.movie);
+  }
 }

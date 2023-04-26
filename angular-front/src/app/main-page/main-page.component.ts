@@ -9,13 +9,13 @@ import { MOVIES } from '../mock-movies';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  movies: any = [];
+  movies: Movie[] = [];
 
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {
-    this.movies = this.moviesService
+    this.moviesService
       .getMovies()
-      .subscribe((models) => console.log(models));
+      .subscribe((movies) => (this.movies = movies));
   }
 }
