@@ -30,12 +30,10 @@ export class MoviesService {
     return movie;
   }
 
-  search(search: string): Observable<Movie[]>{
-    if(!search.trim()){
+  search(search: string): Observable<Movie[]> {
+    if (!search.trim()) {
       return of([]);
     }
-    return this.http.get<Movie[]>(
-      `${MOVIES_API}/?name=${search}`
-      );
+    return this.http.get<Movie[]>(`${MOVIES_API}?name=${search}`);
   }
 }
