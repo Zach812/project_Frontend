@@ -15,7 +15,7 @@
         (input)="search(Search.value)"
       />
       <ul>
-        <li *ngFor="let movie of movies$ | async">
+        <li *ngFor="let movie of movies$">
           <a routerLink="/detail/{{ movie.name }}">
             {{ movie.name }}
           </a>
