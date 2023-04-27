@@ -28,4 +28,9 @@ p{
     border: 1px solid white;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+ul{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
