@@ -25,8 +25,8 @@ export class MoviesService {
     return this.http.get<Movie[]>(MOVIES_API);
   }
 
-  getMovie(name: string) {
-    const movie = this.movies.find((m) => m.name == name);
+  getMovie(name: string, array: Movie[]) {
+    const movie = array.find((m) => m.name == name);
     return movie;
   }
 
