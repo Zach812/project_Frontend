@@ -8,20 +8,9 @@
                 <div class="w-100">
                   <h5>Add a comment</h5>
                   <ul class="rating mb-3" data-mdb-toggle="rating">
-                    <li>
-                      <i class="far fa-star fa-sm text-danger" title="Bad"></i>
-                    </li>
-                    <li>
-                      <i class="far fa-star fa-sm text-danger" title="Poor"></i>
-                    </li>
-                    <li>
-                      <i class="far fa-star fa-sm text-danger" title="OK"></i>
-                    </li>
-                    <li>
-                      <i class="far fa-star fa-sm text-danger" title="Good"></i>
-                    </li>
-                    <li>
-                      <i class="far fa-star fa-sm text-danger" title="Excellent"></i>
+                    <li *ngFor="let star of Stars" (click)="countStar(star)">
+                      <i *ngIf="star > selectedValue" class="far fa-star fa-sm text-danger"></i>
+                      <i *ngIf="star <= selectedValue" class="fas fa-star fa-sm text-danger"></i>
                     </li>
                   </ul>
                   <div class="form-outline">
