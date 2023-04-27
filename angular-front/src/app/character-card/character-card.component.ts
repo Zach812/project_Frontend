@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MoviesService } from '../movies.service';
+import { Character } from '../Character';
 
 @Component({
   selector: 'app-character-card',
@@ -9,24 +10,9 @@ import { MoviesService } from '../movies.service';
   styleUrls: ['./character-card.component.css'],
 })
 export class CharacterCardComponent {
-  movie: any;
-
-  constructor(
-    private route: ActivatedRoute,
-    private movieService: MoviesService,
-    private location: Location
-  ) {}
-
-  ngOnInit(): void {
-    this.getMovie();
-  }
-
-  getMovie(): void {
-    const name = String(this.route.snapshot.paramMap.get('name'));
-    this.movieService
-      .getMovies()
-      .subscribe(
-        (movies) => (this.movie = this.movieService.getMovie(name, movies))
-      );
-  }
+  @Input() character: Character = {
+    movieId: 0,
+    name: '',
+    profile: '',
+  };
 }

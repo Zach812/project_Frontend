@@ -1,8 +1,8 @@
 <h1 class="header">Chronological Order</h1>
 <div class="cont">
-  <div class="elmntCont" *ngFor="let movie of movies">
+  <div class="elmntCont" *ngFor="let order of ordered">
     <div class="cardCont" style="margin: 10px">
-      <app-movie-card [movie]="movie"></app-movie-card>
+      <app-movie-card [movie]="order"></app-movie-card>
     </div>
   </div>
 </div>

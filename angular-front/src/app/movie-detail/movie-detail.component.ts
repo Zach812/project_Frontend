@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { MoviesService } from '../movies.service';
 import { CharactersService } from '../characters.service';
+import { Character } from '../Character';
+import { Movie } from '../Movie';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -10,7 +12,7 @@ import { CharactersService } from '../characters.service';
 })
 export class MovieDetailComponent implements OnInit {
   movie: any;
-
+  characters: Character[] = [];
   constructor(
     private route: ActivatedRoute,
     private movieService: MoviesService,
@@ -20,25 +22,30 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovie();
-    this.getCharacters();
   }
 
   getMovie(): void {
     const name = String(this.route.snapshot.paramMap.get('name'));
-    this.movieService
-      .getMovies()
+    this.movieService.getMovies().subscribe((movies) => {
+      this.movie = this.movieService.getMovie(name, movies);
+
+      this.getCharacters(this.movieService.getMovie(name, movies)?.name);
+    });
+  }
+
+  getCharacters(name: any): void {
+    this.characterService
+      .getCharacters()
       .subscribe(
-        (movies) => (this.movie = this.movieService.getMovie(name, movies))
+        (characters) =>
+          (this.characters = characters.filter((character) =>
+            this.movieService.getMovieByURL(String(character.movieId), name)
+          ))
       );
   }
 
-  getCharacters(): void {
-    this.characterService
-      .getCharacters()
-      .subscribe((characters) => console.log(characters));
-  }
-
   goBack() {
-    this.location.back();
+    this.location.go('/home');
+    window.location.reload();
   }
 }
