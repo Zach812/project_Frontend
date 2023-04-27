@@ -4,7 +4,7 @@
   align-items: flex-start;
   margin: 10px;
 
-  width: 234px;
+  width: 500px;
   height: auto;
 
   background: rgba(165, 165, 165, 0.6);
@@ -16,9 +16,6 @@ img {
   justify-content: flex-end;
   align-items: flex-start;
   padding: 10px;
-  aspect-ratio: 4/3;
-  width: 184px;
-
   border-radius: 1rem;
 }
 
