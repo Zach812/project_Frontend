@@ -16,7 +16,7 @@
       />
       <ul>
         <li *ngFor="let movie of movies$">
-          <a routerLink="/detail/{{ movie.name }}">
+          <a routerLink="/detail/{{ movie.name }}" (click)="reload(movie.name)">
             {{ movie.name }}
           </a>
         </li>

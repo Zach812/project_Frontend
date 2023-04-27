@@ -3,7 +3,7 @@ import { Observable, Subject, of } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 import { Movie } from '../Movie';
 import { MoviesService } from '../movies.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,7 +12,10 @@ import { MoviesService } from '../movies.service';
 export class NavbarComponent implements OnInit {
   movies$: Movie[] = [];
   private searchTerms = new Subject<string>();
-  constructor(private moviesService: MoviesService) {}
+  constructor(
+    private moviesService: MoviesService,
+    private location: Location
+  ) {}
 
   search(search: string) {
     if (search.trim()) {
@@ -32,5 +35,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.movies$ = [];
+  }
+  reload(name: string): void {
+    this.location.go(`/detail/${name}`);
+    window.location.reload();
   }
 }
