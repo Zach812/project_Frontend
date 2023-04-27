@@ -11,7 +11,13 @@ import { Movie } from '../Movie';
   styleUrls: ['./movie-detail.component.css'],
 })
 export class MovieDetailComponent implements OnInit {
-  movie: any;
+  movie: Movie = {
+    id: 5,
+    name: '',
+    description: '',
+    picture: '',
+    order: NaN,
+  };
   characters: Character[] = [];
   constructor(
     private route: ActivatedRoute,
@@ -29,19 +35,14 @@ export class MovieDetailComponent implements OnInit {
     this.movieService.getMovies().subscribe((movies) => {
       this.movie = this.movieService.getMovie(name, movies);
 
-      this.getCharacters(this.movieService.getMovie(name, movies)?.name);
+      this.getCharacters(this.movieService.getMovie(name, movies)?.id);
     });
   }
 
-  getCharacters(name: any): void {
-    this.characterService
-      .getCharacters()
-      .subscribe(
-        (characters) =>
-          (this.characters = characters.filter((character) =>
-            this.movieService.getMovieByURL(String(character.movieId), name)
-          ))
-      );
+  getCharacters(id: number) {
+    this.characterService.getCharactersPg1().subscribe((characters) => {
+      this.characters = this.characterService.filterChracters(characters, id);
+    });
   }
 
   goBack() {

@@ -27,19 +27,17 @@ export class MoviesService {
 
   getMovie(name: string, array: Movie[]) {
     const movie = array.find((m) => m.name == name);
-    return movie;
-  }
-
-  getMovieByURL(url: string, name: string) {
-    return this.http.get<Movie>(url).subscribe((movie) => {
-      {
-        if (movie.name == name) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    });
+    if (movie) {
+      return movie;
+    } else {
+      return {
+        id: NaN,
+        name: '',
+        description: '',
+        picture: '',
+        order: NaN,
+      };
+    }
   }
 
   search(search: string): Observable<Movie[]> {
