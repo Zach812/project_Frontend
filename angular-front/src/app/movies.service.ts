@@ -30,6 +30,18 @@ export class MoviesService {
     return movie;
   }
 
+  getMovieByURL(url: string, name: string) {
+    return this.http.get<Movie>(url).subscribe((movie) => {
+      {
+        if (movie.name == name) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    });
+  }
+
   search(search: string): Observable<Movie[]> {
     if (!search.trim()) {
       return of([]);

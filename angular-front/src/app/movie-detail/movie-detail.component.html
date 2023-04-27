@@ -6,12 +6,8 @@
   </h1>
   <div class="card-body">
     <h2><em>Characters</em></h2>
-    <p class="list">
-      <app-character-card></app-character-card>
-      <app-character-card></app-character-card>
-      <app-character-card></app-character-card>
-      <app-character-card></app-character-card>
-      <app-character-card></app-character-card>
+    <p class="list" *ngFor="let char of characters">
+      <app-character-card [character]="char"></app-character-card>
     </p>
   </div>
   <div class="card-body">
