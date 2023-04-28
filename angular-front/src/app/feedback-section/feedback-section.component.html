@@ -6,7 +6,10 @@
             <div class="card-body p-4">
               <div class="d-flex flex-start w-100">
                 <div class="w-100">
-                  <app-comment-section></app-comment-section>
+                  <app-comment-section 
+                  STARS="{{this.selectedValue}}" 
+                  (starsUpdate)="countStar($event)"
+                  ></app-comment-section>
                   <h5>Rate Movie:</h5>
                   <ul class="rating mb-3" data-mdb-toggle="rating">
                     <li *ngFor="let star of Stars" (click)="countStar(star)">
