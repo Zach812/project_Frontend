@@ -10,6 +10,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { FeedbackSectionComponent } from './feedback-section/feedback-section.component';
 import { CharacterCardComponent } from './character-card/character-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommentSectionComponent } from './comment-section/comment-section.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     MovieDetailComponent,
     FeedbackSectionComponent,
     CharacterCardComponent,
+    CommentSectionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
