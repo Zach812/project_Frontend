@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-feedback-section',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackSectionComponent{
     Stars: number[] = [1,2,3,4,5];
-    selectedValue = 0;
+    selectedValue: number = 0;
 
     countStar(star: number){
       this.selectedValue = star;
