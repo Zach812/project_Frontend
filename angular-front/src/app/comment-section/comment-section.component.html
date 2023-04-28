@@ -1,47 +1,25 @@
 <div class="comment-container">
-
     <div class="comment-section">
-  
       <h2>Comments</h2>
   
       <!-- Display existing comments here -->
-  
       <div class="comment" *ngFor="let comment of comments">
-  
         <p><strong>{{ comment.user }}</strong> said:</p>
-  
         <p>{{ comment.message }}</p>
-  
       </div>
   
-   
-  
       <!-- Add new comment form -->
-  
       <form class="new-comment">
-  
         <h4>Add a comment</h4>
-  
         <div>
-  
           <label for="user">Name:</label>
-  
           <input type="text" id="user" name="user" [(ngModel)]="newComment.user" />
-  
         </div>
-  
         <div>
-  
           <label for="message">Comment:</label>
-  
           <textarea id="message" name="message" [(ngModel)]="newComment.message"></textarea>
-  
         </div>
-  
         <button type="submit" (click)="addComment()">Add Comment</button>
-  
       </form>
-  
     </div>
-  
   </div>
