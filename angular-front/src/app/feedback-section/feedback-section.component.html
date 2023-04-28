@@ -6,22 +6,14 @@
             <div class="card-body p-4">
               <div class="d-flex flex-start w-100">
                 <div class="w-100">
-                  <h5>Add a comment</h5>
+                  <app-comment-section></app-comment-section>
+                  <h5>Rate Movie:</h5>
                   <ul class="rating mb-3" data-mdb-toggle="rating">
                     <li *ngFor="let star of Stars" (click)="countStar(star)">
                       <i *ngIf="star > selectedValue" class="far fa-star fa-sm text-danger"></i>
                       <i *ngIf="star <= selectedValue" class="fas fa-star fa-sm text-danger"></i>
                     </li>
                   </ul>
-                  <div class="form-outline">
-                    <textarea class="form-control bg" id="textAreaExample" rows="4"></textarea>
-                    <label class="form-label" for="textAreaExample">What are your thoughts on this movie? Be sure to rate the movie above!</label>
-                  </div>
-                  <div class="d-flex justify-content-between mt-3">
-                    <button type="button" class="btn btn-danger">
-                      Send <i class="fas fa-long-arrow-alt-right ms-1"></i>
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
