@@ -2,7 +2,7 @@
   <div class="top">
     <img src="{{ movie.picture }}" alt="" class="topPic" />
     <div class="topRank">
-      <h1 class="topRankTxt"># {{ movie.order }}</h1>
+      <h1 class="topRankTxt"># {{ display }}</h1>
     </div>
   </div>
   <div class="title">
@@ -11,4 +11,8 @@
   <button class="btn btn-dark fw-bolder" routerLink="/detail/{{ movie.name }}">
     View More
   </button>
+  <div class="ranking" *ngIf="movie.rank">
+    <i class="fas fa-star fa-sm text-warning"></i>
+    {{ movie.rank }}
+  </div>
 </div>

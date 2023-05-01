@@ -3,6 +3,8 @@ import { MOVIES } from './mock-movies';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Movie } from './Movie';
+import { Rating } from './Rating';
+import { RatingsService } from './ratings.service';
 
 const MOVIES_API = 'http://127.0.0.1:8000/movies/';
 
@@ -10,7 +12,10 @@ const MOVIES_API = 'http://127.0.0.1:8000/movies/';
   providedIn: 'root',
 })
 export class MoviesService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private ratingService: RatingsService
+  ) {}
 
   movies: Movie[] = [];
 
@@ -38,6 +43,23 @@ export class MoviesService {
         order: NaN,
       };
     }
+  }
+
+  getMoviesByRank(array: Movie[], ratings: Rating[]) {
+    let copy: any = [...array];
+    array.map((movie, index) => {
+      let totalRating = 0;
+      let Ratings = this.ratingService.getMovieRatings(ratings, movie.id);
+      for (let i = 0; i < Ratings.length; i++) {
+        totalRating += Ratings[i].rating;
+      }
+      if (Ratings.length == 0) {
+        copy[index]['rank'] = 0;
+      } else {
+        copy[index]['rank'] = totalRating / Ratings.length;
+      }
+    });
+    return copy;
   }
 
   search(search: string): Observable<Movie[]> {

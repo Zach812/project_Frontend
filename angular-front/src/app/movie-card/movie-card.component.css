@@ -75,3 +75,8 @@
   text-align: center;
   color: #000000;
 }
+.ranking {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}

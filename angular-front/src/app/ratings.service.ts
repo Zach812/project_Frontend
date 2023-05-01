@@ -14,4 +14,17 @@ export class RatingsService {
   getRatings(): Observable<Rating[]> {
     return this.http.get<Rating[]>(RATINGS_API);
   }
+
+  getMovieRatings(ratings: Rating[], id: number) {
+    return ratings.filter(
+      (rating) =>
+        String(rating.movieId) == `http://127.0.0.1:8000/movies/${id}/`
+    );
+  }
+
+  addRating(newRating: Rating) {
+    this.http
+      .post<Rating>(RATINGS_API, newRating)
+      .subscribe((item) => console.log(item));
+  }
 }

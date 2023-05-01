@@ -7,13 +7,8 @@ import { Movie } from '../Movie';
   styleUrls: ['./movie-card.component.css'],
 })
 export class MovieCardComponent implements OnInit {
-  @Input() movie: Movie = {
-    id: NaN,
-    name: '',
-    description: '',
-    picture: '',
-    order: NaN,
-  };
+  @Input() movie!: any;
+  @Input() display!: number;
 
   ngOnInit(): void {}
 }
