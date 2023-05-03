@@ -40,3 +40,9 @@ a {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+.back {
+  position: absolute;
+  top: 80px;
+  right: 10px;
+}
