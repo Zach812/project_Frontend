@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { RatingsService } from '../ratings.service';
 import { Movie } from '../Movie';
@@ -5,12 +6,13 @@ import { Rating } from '../Rating';
 
 @Component({
   selector: 'app-comment-section',
-
   templateUrl: './comment-section.component.html',
 
   styleUrls: ['./comment-section.component.css'],
+
 })
 export class CommentSectionComponent implements OnInit {
+
   @Input() ratings!: Rating[];
   @Input() id!: any;
   constructor(private ratingService: RatingsService) {}
@@ -32,6 +34,7 @@ export class CommentSectionComponent implements OnInit {
     };
     this.ratingService.addRating(newComment);
     window.location.reload();
+
   }
 
   ngOnInit() {
