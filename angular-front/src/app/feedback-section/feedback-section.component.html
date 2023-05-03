@@ -1,27 +1,18 @@
 <section>
-    <div class="container my-5 py-5 text-dark">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-6">
-          <div class="card bg">
-            <div class="card-body p-4">
-              <div class="d-flex flex-start w-100">
-                <div class="w-100">
-                  <app-comment-section 
-                  STARS="{{this.selectedValue}}" 
-                  (starsUpdate)="countStar($event)"
-                  ></app-comment-section>
-                  <h5>Rate Movie:</h5>
-                  <ul class="rating mb-3" data-mdb-toggle="rating">
-                    <li *ngFor="let star of Stars" (click)="countStar(star)">
-                      <i *ngIf="star > selectedValue" class="far fa-star fa-sm text-danger"></i>
-                      <i *ngIf="star <= selectedValue" class="fas fa-star fa-sm text-danger"></i>
-                    </li>
-                  </ul>
-                </div>
+  <div class="container my-5 py-5 text-dark">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-6">
+        <div class="card bg">
+          <div class="card-body p-4">
+            <div class="d-flex flex-start w-100">
+              <div class="w-100">
+                <app-comment-section></app-comment-section>
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

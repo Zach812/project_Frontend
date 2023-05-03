@@ -2,15 +2,15 @@
 <div class="cont">
   <div class="elmntCont" *ngFor="let order of ordered">
     <div class="cardCont" style="margin: 10px">
-      <app-movie-card [movie]="order"></app-movie-card>
+      <app-movie-card [movie]="order" [display]="order.order"></app-movie-card>
     </div>
   </div>
 </div>
 <h1 class="header">Ranking Order</h1>
 <div class="cont">
-  <div class="elmntCont" *ngFor="let movie of movies">
+  <div class="elmntCont" *ngFor="let movie of ranked; let i = index">
     <div class="cardCont" style="margin: 10px">
-      <app-movie-card [movie]="movie"></app-movie-card>
+      <app-movie-card [movie]="movie" [display]="i + 1"></app-movie-card>
     </div>
   </div>
 </div>

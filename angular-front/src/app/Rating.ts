@@ -1,5 +1,6 @@
 export interface Rating {
-  movieId: number;
+  movieId: string;
+  name: string;
   rating: number;
   comment: string;
 }

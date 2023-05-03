@@ -5,6 +5,8 @@ import { MoviesService } from '../movies.service';
 import { CharactersService } from '../characters.service';
 import { Character } from '../Character';
 import { Movie } from '../Movie';
+import { RatingsService } from '../ratings.service';
+import { Rating } from '../Rating';
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
@@ -19,15 +21,20 @@ export class MovieDetailComponent implements OnInit {
     order: NaN,
   };
   characters: Character[] = [];
+  ratings: Rating[] = [];
   constructor(
     private route: ActivatedRoute,
     private movieService: MoviesService,
     private characterService: CharactersService,
-    private location: Location
+    private location: Location,
+    private ratingService: RatingsService
   ) {}
 
   ngOnInit(): void {
     this.getMovie();
+    this.ratingService.getRatings().subscribe((ratings) => {
+      this.ratings = this.ratingService.getMovieRatings(ratings, this.movie.id);
+    });
   }
 
   getMovie(): void {
